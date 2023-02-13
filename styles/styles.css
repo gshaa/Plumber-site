@@ -2,70 +2,135 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.main-margin {
-  margin-bottom: 6rem;
+.main-padding {
+  padding-top: 6rem;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+nav li,
+nav a {
   text-decoration: none;
-  font-size: 17px;
+  list-style: none;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+nav {
+  height: 80px;
+  width: 100%;
+  background-color: #34495e;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
-.topnav a.active {
-  background-color: #dd3142;
+nav {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  margin: 0;
+  float: right;
+  margin-right: 40px;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 8px;
+  line-height: 80px;
+}
+
+nav a {
   color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  padding: 7px 10px;
+  border-radius: 3px;
 }
 
-.topnav .icon {
+.nav-logo img {
+  width: 54px;
+  margin-left: 40px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+.nav-logo-click {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.nav-logo-click:hover {
+  text-decoration: none;
+  border: 0;
+}
+
+nav a:hover {
+  border: 1px solid white;
+  transition: 0.5s;
+}
+
+nav #icon {
   display: none;
+  color: white;
+  font-size: 30px;
+  line-height: 80px;
+  float: right;
+  margin-right: 24px;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
-    display: none;
+.is-menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 1040px) {
+  .nav-logo img {
+    margin-left: 20px;
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
+  nav ul {
+    margin-right: 20px;
+  }
+  nav a {
+    font-size: 17px;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .topnav.responsive {
-    position: relative;
-  }
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
+@media (max-width: 909px) {
+  nav #icon {
     display: block;
-    text-align: left;
+  }
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2f3640;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav a {
+    font-size: 20px;
+  }
+
+  nav a:hover {
+    border: none;
+    color: #3498db;
+  }
+
+  nav ul.show {
+    left: 0;
   }
 }
 
@@ -74,16 +139,25 @@ body {
 .home {
   display: grid;
   grid-template-columns: 50% 50%;
-  margin-top: 8rem;
+  padding-top: 8rem;
+}
+.home a {
+  text-decoration: none;
 }
 
 .img-home-left {
   width: 350px;
 }
 
+.home-left-contact {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .home-title {
   font-family: "Lato", sans-serif;
-  font-size: 35px;
+  font-size: 44px;
   font-weight: bold;
 }
 
@@ -101,22 +175,53 @@ body {
 
 .phone-number {
   font-family: "Lato", sans-serif;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: bold;
   text-decoration: none;
 }
 
+@media screen and (max-width: 1400px) {
+  .home {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .home-right-sit {
+    width: 510px;
+  }
+  .home-left {
+    order: 1;
+    margin-top: 3rem;
+  }
+  .home-right {
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+  }
+  .home-right-stand {
+    display: none;
+  }
+}
+
 .oferta-information {
   display: grid;
-  grid-template-columns: 35% 65%;
-  margin-right: 10%;
+  grid-template-columns: 50% 50%;
+  gap: 0;
 }
 
 .oferta {
-  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+}
+
+.oferta-rigth {
+  background-color: #dd3142;
 }
 
 .oferta-title {
+  text-align: center;
   font-family: "Lato", sans-serif;
   font-size: 42px;
   font-weight: bold;
@@ -128,6 +233,7 @@ body {
   font-size: 22px;
   font-weight: bold;
   color: #fff;
+  padding: 16px 28px;
 }
 
 .oferta-list-components {
@@ -136,77 +242,73 @@ body {
   font-weight: 100;
 }
 
-.oferta-rigth {
-  background-color: #dd3142;
-  display: grid;
-  grid-template-columns: 25% 75%;
-  z-index: -1;
-}
-
 .oferta-left {
-  z-index: 0;
-  grid-template-columns: 1fr;
-  position: relative;
+  display: grid;
+  align-content: center;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #dd3142 50%,
+    #dd3142 100%
+  );
 }
 
 .oferta-left-img {
-  z-index: 100;
-  position: absolute;
-  right: -40%;
-  top: 22%;
   width: 720px;
 }
 
 /* form */
 
-/* Style inputs with type="text", select elements and textareas */
 input[type="text"],
-select,
+input[type="tel"],
 textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
-/* Style the submit button with a specific background color etc */
 input[type="submit"] {
   background-color: #dd3142;
   color: white;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* When moving the mouse over the submit button, add a darker green color */
 input[type="submit"]:hover {
   background-color: #e05967;
 }
 
-/* Add a background color and some padding around the form */
 .contact {
   margin-left: 10%;
   margin-right: 10%;
-  border-radius: 5px;
-  background-color: #f2f2f2;
   padding: 20px;
 }
 
 .contact-title {
+  text-align: center;
   font-family: "Lato", sans-serif;
-  font-size: 35px;
+  font-size: 42px;
   font-weight: bold;
+}
+
+.contact-form {
+  background-color: #f2f2f2;
+  padding: 2rem;
+  border-radius: 7px;
 }
 
 .about-us {
   text-align: center;
   font-family: "Lato", sans-serif;
-  font-size: 35px;
+  font-size: 42px;
   font-weight: bold;
 }
 
@@ -222,7 +324,8 @@ input[type="submit"]:hover {
 
 .about-us-text {
   font-family: "Lato", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 100;
   color: #000000;
 }
 
@@ -233,8 +336,7 @@ input[type="submit"]:hover {
   justify-content: center;
   gap: 5rem;
   align-items: center;
-
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
 }
 
 .footer-logo {
@@ -249,4 +351,212 @@ input[type="submit"]:hover {
 
 .footer-information a {
   text-decoration: none;
+}
+
+/* media */
+
+@media (max-width: 950px) {
+  .home {
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+  .home-title {
+    font-size: 30px;
+  }
+  .phone-number {
+    font-size: 21px;
+  }
+  .oferta-information {
+    display: block;
+  }
+  .oferta-title {
+    font-size: 34px;
+  }
+
+  .oferta-left-img {
+    width: 96vw;
+    border-radius: 5px;
+  }
+  .oferta {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    position: relative;
+  }
+
+  .oferta-rigth {
+    background-color: #dd3142;
+    border-radius: 7px;
+  }
+  .oferta-left {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+  }
+
+  .oferta-list {
+    font-size: 20px;
+  }
+
+  .oferta-list-components {
+    font-size: 18px;
+  }
+
+  .contact {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contact-title {
+    font-size: 34px;
+  }
+  .about-us-container {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+  .about-us {
+    font-size: 34px;
+  }
+  .footer {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    gap: 2.5rem;
+  }
+  .footer-logo {
+    width: 160px;
+  }
+  .footer-information p {
+    font-family: "Lato", sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    margin-top: 2rem;
+  }
+  .home-right-sit {
+    width: 340px;
+  }
+  .home-title {
+    font-size: 24px;
+  }
+  .home-title-second {
+    padding-bottom: 1rem;
+  }
+  .phone-number {
+    font-size: 18px;
+  }
+  .oferta-title,
+  .contact-title,
+  .about-us {
+    font-size: 30px;
+  }
+  .oferta-list {
+    font-size: 18px;
+  }
+  .oferta-list-components {
+    font-size: 17px;
+  }
+  .about-us-text {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .footer {
+    gap: 2rem;
+  }
+
+  .footer-logo {
+    width: 120px;
+  }
+  .footer-information p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-right-sit {
+    width: 300px;
+  }
+  .home-title {
+    font-size: 22px;
+  }
+  .phone-number {
+    font-size: 17px;
+  }
+  .home-title-second {
+    padding-bottom: 1rem;
+  }
+  .oferta-title,
+  .contact-title,
+  .about-us {
+    font-size: 27px;
+  }
+  .about-us-text {
+    font-size: 18px;
+  }
+  .footer-logo {
+    width: 110px;
+  }
+  .footer {
+    gap: 11px;
+  }
+  .footer-information p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 2100px) {
+  .home-right-sit {
+    width: 510px;
+  }
+  .home-right-stand {
+    width: 380px;
+  }
+  .home-title {
+    font-size: 50px;
+  }
+
+  .phone-number {
+    font-size: 31px;
+  }
+  .oferta-title,
+  .contact-title,
+  .about-us {
+    font-size: 56px;
+  }
+  .oferta-list {
+    font-size: 27px;
+  }
+  .oferta-list-components {
+    font-size: 24px;
+  }
+  .oferta-left-img {
+    width: 860px;
+  }
+  .about-us-text {
+    font-size: 28px;
+  }
+  .contact-form {
+    font-size: 25px;
+  }
+  input[type="text"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 22px;
+  }
+  input[type="submit"] {
+    padding: 16px 26px;
+    font-size: 20px;
+    border-radius: 7px;
+  }
+  .footer-logo {
+    width: 300px;
+  }
+  .footer-information p {
+    font-size: 29px;
+  }
 }

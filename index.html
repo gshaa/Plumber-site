@@ -10,40 +10,56 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">Home</a>
-      <a href="#oferta">Oferta</a>
-      <a href="#contact">Kontakt</a>
-      <a href="#about-us">O firmie</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
+    <nav>
+      <label class="nav-logo" onclick="logoToggleOverflow()">
+        <a href="#home" class="nav-logo-click"
+          ><img src="/images/plumber-logo-andrew.png" alt="..."
+        /></a>
+      </label>
+      <ul class="mobile-menu" onclick="toggleOverflow()">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#about-us">O firmie</a></li>
+      </ul>
+      <label id="icon">
+        <i class="fa fa-bars burger" onclick="toggleOverflow()"></i>
+      </label>
+    </nav>
 
-    <div class="home home-position main-margin" id="home">
+    <div class="home home-position" id="home">
       <div class="home-left">
         <p class="home-title home-title-first">Zadzwoń do nas</p>
         <p class="home-title home-title-second">pomożemy w twojej sytuacji</p>
-        <a href="#" class="phone-number">+48880903487</a> <br />
-        <a href="#" class="phone-number">andreykoyashchuk93@gmail.com</a>
+        <p>
+          <a href="tel:+48880903487" class="phone-number">+48880903487</a>
+        </p>
+        <p>
+          <a href="mailto:hydraulicolsztyn@gmail.com" class="phone-number"
+            >hydraulicolsztyn@gmail.com</a
+          >
+        </p>
       </div>
 
       <div class="home-right">
-        <img src="images/home-right-stand.png" alt="..." />
-        <img src="images/home-right-sit.png" alt="..." />
+        <img
+          class="home-right-stand"
+          src="images/home-right-stand.png"
+          alt="..."
+        />
+        <img class="home-right-sit" src="images/home-right-sit.png" alt="..." />
       </div>
     </div>
-
-    <div class="oferta main-margin" id="oferta">
+    <div class="oferta main-padding" id="oferta">
       <p class="oferta-title">Nasza oferta</p>
       <div class="oferta-information">
         <div class="oferta-left">
           <img class="oferta-left-img" src="images/oferta-img.png" alt="..." />
         </div>
         <div class="oferta-rigth">
-          <div class=""></div>
           <ul class="oferta-list">
             Usługi Hydrauliczne
             <li class="oferta-list-components">
@@ -95,36 +111,32 @@
         </div>
       </div>
     </div>
-    <div class="contact main-margin" id="contact">
-      <p class="contact-title">Napisz do nas</p>
+    <div class="contact" id="contact">
+      <p class="contact-title main-padding">Napisz do nas</p>
       <div class="contact-form">
         <form action="action_page.php">
-          <label for="fname">Imię i Nazwisko</label>
+          <label for="name">Imię i Nazwisko</label>
           <input
             type="text"
             id="name"
             name="name"
             placeholder="Imię i nazwisko"
           />
-          <label for="lname">Numer</label>
-          <input
-            type="text"
-            id="lname"
-            name="lastname"
-            placeholder="Twój numer"
-          />
+          <label for="phone">Numer</label>
+          <input type="tel" id="phone" name="phone" placeholder="Twój numer" />
+
           <label for="subject">Wiadomość</label>
           <textarea
             id="subject"
             name="subject"
-            placeholder="Napisz coś"
+            placeholder="Napisz wiadomość"
             style="height: 200px"
           ></textarea>
           <input type="submit" value="Wyślij" />
         </form>
       </div>
     </div>
-    <div class="about-us main-margin" id="about-us">
+    <div class="about-us main-padding" id="about-us">
       <p>O firmie</p>
       <div class="about-us-container">
         <div class="about-us-left">
@@ -144,14 +156,14 @@
         </div>
       </div>
     </div>
-    <div class="footer">
+    <div class="footer main-padding">
       <img class="footer-logo" src="images/logo-with-text.jpg" alt="..." />
       <div class="footer-information">
-        <p>Tel.: <a href="#">+48880903487</a></p>
+        <p>Tel.: <a href="tel:+48880903487">+48880903487</a></p>
         <p>
           Email:
-          <a href="mailto:andreykoyashchuk93@gmail.com"
-            >andreykoyashchuk93@gmail.com</a
+          <a href="mailto:hydraulicolsztyn@gmail.com"
+            >hydraulicolsztyn@gmail.com</a
           >
         </p>
       </div>

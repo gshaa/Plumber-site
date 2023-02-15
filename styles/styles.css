@@ -262,7 +262,8 @@ nav #icon {
 
 input[type="text"],
 input[type="tel"],
-textarea {
+#subject {
+  font-family: sans-serif;
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -544,13 +545,12 @@ input[type="submit"]:hover {
   }
   input[type="text"],
   input[type="tel"],
-  select,
-  textarea {
+  #subject {
     font-size: 22px;
   }
   input[type="submit"] {
     padding: 16px 26px;
-    font-size: 20px;
+    font-size: 22px;
     border-radius: 7px;
   }
   .footer-logo {

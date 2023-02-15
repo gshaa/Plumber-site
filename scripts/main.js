@@ -38,3 +38,24 @@ links.forEach((link) => {
     target.scrollIntoView({ behavior: "smooth" });
   });
 });
+
+//form
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch("send-email.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((message) => {
+      alert(message);
+      form.reset();
+    })
+    .catch((error) => console.error(error));
+});

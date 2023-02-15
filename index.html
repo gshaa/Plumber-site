@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hydraulik Olsztyn</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link
       rel="stylesheet"
@@ -16,7 +20,7 @@
     <nav>
       <label class="nav-logo" onclick="logoToggleOverflow()">
         <a href="#home" class="nav-logo-click"
-          ><img src="/images/plumber-logo-andrew.png" alt="..."
+          ><img src="images/plumber-logo-andrew.png" alt="..."
         /></a>
       </label>
       <ul class="mobile-menu" onclick="toggleOverflow()">
@@ -114,16 +118,24 @@
     <div class="contact" id="contact">
       <p class="contact-title main-padding">Napisz do nas</p>
       <div class="contact-form">
-        <form action="action_page.php">
+        <form id="contact-form" method="POST">
           <label for="name">Imię i Nazwisko</label>
           <input
             type="text"
             id="name"
             name="name"
             placeholder="Imię i nazwisko"
+            required
           />
+
           <label for="phone">Numer</label>
-          <input type="tel" id="phone" name="phone" placeholder="Twój numer" />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Twój numer"
+            required
+          />
 
           <label for="subject">Wiadomość</label>
           <textarea
@@ -131,8 +143,10 @@
             name="subject"
             placeholder="Napisz wiadomość"
             style="height: 200px"
+            required
           ></textarea>
-          <input type="submit" value="Wyślij" />
+
+          <input type="submit" value="Wyślij" id="submit" />
         </form>
       </div>
     </div>
